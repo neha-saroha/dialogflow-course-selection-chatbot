@@ -4,7 +4,7 @@ class Log:
         pass
 
     def write_log(self, sessionID, log_message):
-        self.file_object = open("conversationLogs/"+sessionID+".txt", 'a+')
+        self.file_object = open("conversationLogs/"+sessionID+".txt", 'w+')
         self.now = datetime.now()
         self.date = self.now.date()
         self.current_time = self.now.strftime("%H:%M:%S")

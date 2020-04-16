@@ -5,16 +5,16 @@ class TemplateReader:
     def read_course_template(self,course_name):
         try:
             email_message = None
-            if (course_name=='DataScienceMasters'):
+            if (course_name=='data science masters'):
                 email_file = open("email_templates/DSM_Template.html", "r")
                 email_message = email_file.read()
-            elif (course_name=='MachineLearningMasters'):
+            elif (course_name=='machine learning masters'):
                 email_file = open("email_templates/MLM_Template.html", "r")
                 email_message = email_file.read()
-            elif (course_name == 'DeepLearningMasters'):
+            elif (course_name == 'deep learning masters'):
                 email_file = open("email_templates/DLM_Template.html", "r")
                 email_message = email_file.read()
-            elif (course_name == 'NLPMasters'):
+            elif (course_name == 'NLP masters'):
                 email_file = open("email_templates/NLPM_Template.html", "r")
                 email_message = email_file.read()
             elif (course_name == 'DataScienceForManagers'):

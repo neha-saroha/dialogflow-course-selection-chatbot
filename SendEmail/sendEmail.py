@@ -7,10 +7,12 @@ from config_reader import ConfigReader
 class EmailSender:
 
     def send_email_to_student(self, recepient_email, message):
+        print(recepient_email)
+        print(message)
         try:
             self.config_reader=ConfigReader()
             self.configuration=self.config_reader.read_config()
-
+            print("hey 1")
             # instance of MIMEMultipart
             self.msg = MIMEMultipart()
 
@@ -30,31 +32,38 @@ class EmailSender:
 
             # attach the body with the msg instance
             self.msg.attach(MIMEText(body, 'html'))
-
+            print("hey 2")
 
             # instance of MIMEBase and named as p
             self.p = MIMEBase('application', 'octet-stream')
-
+            print("hey 3")
 
             # creates SMTP session
             self.smtp = smtplib.SMTP('smtp.gmail.com', 587)
+            print("hey 4")
 
             # start TLS for security
             self.smtp.starttls()
+            print("hey 5")
 
             # Authentication
             self.smtp.login(self.msg['From'], self.configuration['PASSWORD'])
+            print(self.msg['From'])
+            print(self.configuration['PASSWORD'])
+            print("hey 6")
 
             # Converts the Multipart msg into a string
             self.text = self.msg.as_string()
-
+            print(self.text)
             # sending the mail
             self.smtp.sendmail(self.msg['From'] , recepient_email, self.text)
+            print("hey 7")
 
 
 
             # terminating the session
             self.smtp.quit()
+            print("hey 8")
         except Exception as e:
             print('the exception from send_email_to_student is '+str(e))
 

@@ -6,7 +6,7 @@ from config_reader import ConfigReader
 
 class EmailSender:
 
-    def send_email_to_student(self, recepient_email, message)
+    def send_email_to_student(self, recepient_email, message):
         try:
             self.config_reader=ConfigReader()
             self.configuration=self.config_reader.read_config()

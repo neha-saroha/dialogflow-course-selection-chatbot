@@ -25,4 +25,4 @@ class TemplateReader:
                 email_message = email_file.read()
             return email_message
         except Exception as e:
-            print('The exception is '+str(e))
+            print('The exception from read_course_template is '+str(e) + course_name)

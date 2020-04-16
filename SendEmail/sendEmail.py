@@ -56,7 +56,7 @@ class EmailSender:
             # terminating the session
             self.smtp.quit()
         except Exception as e:
-            print('the exception is '+str(e))
+            print('the exception from send_email_to_student is '+str(e))
 
     def send_email_to_support(self,cust_name,cust_email,cust_contact,course_name,body):
             try:
